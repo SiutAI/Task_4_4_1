@@ -10,6 +10,10 @@ public class Phone {
     }
 
     public boolean isFound(String newString) {
+        // Обязательно начинается на +
+        // После + обязательно следует цифра от 2 до 9.
+        // Пара () может быть только одна
+
         Pattern pattern = Pattern.compile("(\\+[ ]?[2-9])[\\- ]?(([(][0-9]{3,16}[)])?([\\- ]*[0-9])){1,16}\\b");
         Matcher matcher = pattern.matcher(newString);
         if (matcher.find()) {
